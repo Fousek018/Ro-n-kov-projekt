@@ -15,7 +15,7 @@ Arduino UNO R3, ATmega328P, Klon- https://www.laskarduino.cz/arduino-uno-r3--atm
 Bluetooth modul HC-05 TTL- https://www.laskarduino.cz/bluetooth-modul-hc-05-ttl/
 ARCTIC P12 PWM 120mm
 Lcd display 16*2- https://www.gme.cz/alfanumericky-lcd-displej-16x2-zlutozeleny-hd44780
-
+https://www.instructables.com/id/Android-Bluetooth-Control-LED-Part-2/
 
 Harmonogram:
 Záři- objednání komponentů
