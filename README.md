@@ -95,7 +95,7 @@ digitalWrite(fan, LOW);
 }
 if((temp >= tempMin) && (temp <= tempMax)) // if temperature is higher than minimum temp
 {
-fanSpeed = temp;//map(temp, tempMin, tempMax, 0, 100); // the actual speed of fan//map(temp, tempMin, tempMax, 32, 255);
+fanSpeed = temp;//map(temp, tempMin, tempMax, 0 , 100); // the actual speed of fan//map(temp, tempMin, tempMax, 32, 255);
 fanSpeed=1.5*fanSpeed;
 fanLCD = map(temp, tempMin, tempMax, 0, 100); // speed of fan to display on LCD100
 analogWrite(fan, fanSpeed); // spin the fan at the fanSpeed speed
