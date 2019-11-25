@@ -7,7 +7,7 @@ Cílem projektu je pwm regulace větráku pomocí teploty, nebo přes bluetooth.
 Duležite odkazy:
 https://www.electroschematics.com/9540/arduino-fan-speed-controlled-temperature/
 https://www.youtube.com/watch?v=OCsmMD4wtNQ https://drive.google.com/file/d/0B7I6...
-https://www.youtube.com/watch?v=R7lmpIAsoQQ
+https://www.youtube.com/watch?v=R7lmpIAsoQQ https://www.gme.cz/bipolarni-tranzistor-2n2222a-to18
 Komponenty:
 
 Dht11- https://www.laskarduino.cz/arduino-senzor-teploty-a-vlhkosti-vzduchu-dht11/
