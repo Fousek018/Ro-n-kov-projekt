@@ -4,8 +4,8 @@ int tempPin = A0;
 int fan = 11; 
 int led = 8; 
 int temp;
-int tempMin = 30; 
-int tempMax = 60; 
+int tempMin = 30; //ventilator se spustí na 30C
+int tempMax = 60; //maximanlní teplota
 int fanSpeed;
 int fanLCD;
 
@@ -19,38 +19,39 @@ Serial.begin(9600);
 
 void loop()
 {
-temp = readTemp(); 
+temp = readTemp(); //získá teplotu
 Serial.print( temp );
-if(temp < tempMin) 
+if(temp < tempMin) //když je teplota nížší než nejnížší teplota
 {
 fanSpeed = 0; // 
 analogWrite(fan, fanSpeed);
 fanLCD=0;
 digitalWrite(fan, LOW);
 }
-if((temp >= tempMin) && (temp <= tempMax)) 
+if((temp >= tempMin) && (temp <= tempMax)) //když je teplota vyšší než nejnížší možná 
 {
-fanSpeed = temp;//map(temp, tempMin, tempMax, 0, 100); 
+fanSpeed = temp;
+map(temp, tempMin, tempMax, 0, 100); //přemapováni větráku
 fanSpeed=1.5*fanSpeed;
 fanLCD = map(temp, tempMin, tempMax, 0, 100); 
-analogWrite(fan, fanSpeed); 
+analogWrite(fan, fanSpeed); //roztočí větrák na požadovanou rychlost
 }
 
-if(temp > tempMax) 
+if(temp > tempMax) //když je teplota vyšší než maximální
 {
-digitalWrite(led, HIGH); 
+digitalWrite(led, HIGH); //zapne se ledka
 }
 else 
 {
-digitalWrite(led, LOW);
+digitalWrite(led, LOW);//vypne se ledka
 }
 
 lcd.print("TEMP: ");
-lcd.print(temp); 
+lcd.print(temp); //zobrazí se teplota na lcd display
 lcd.print("C ");
-lcd.setCursor(0,1); 
+lcd.setCursor(0,1); //posune kurzor na další řádek
 lcd.print("FANS: ");
-lcd.print(fanLCD); 
+lcd.print(fanLCD); //zobrazí počet otáček
 lcd.print("%");
 delay(200);
 lcd.clear();
