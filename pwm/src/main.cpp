@@ -17,6 +17,13 @@ lcd.begin(16,2);
 Serial.begin(9600);
 }
 
+int readTemp() { 
+temp = analogRead(tempPin);
+return temp * 0.48828125;
+}
+
+
+
 void loop()
 {
 temp = readTemp(); //získá teplotu
@@ -57,7 +64,5 @@ delay(200);
 lcd.clear();
 }
 
-int readTemp() { 
-temp = analogRead(tempPin);
-return temp * 0.48828125;
+
 } 
